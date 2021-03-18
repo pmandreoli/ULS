@@ -1,0 +1,2 @@
+#!/bin/bash
+curl https://api.github.com/users/pmandreoli/repos?per_page=100  https://api.github.com/orgs/Laniakea-elixir-it/repos?per_page=100 2> /dev/null | grep clone_url | sed  's/"clone_url"://g; s/"//g; s/,//g; s/ //g' | dmenu -i -l 10 -p clonerepo | xargs -r -d'\n' greenclip print
