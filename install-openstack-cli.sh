@@ -4,7 +4,7 @@ python3 -m venv $1;
 . $1/bin/activate ;
 pip install wheel;
 pip install python-openstackclient;
-if [ -z $2 ] 
+if [ -n "$2" ] 
 then
 	pip install python-${2}client;
 fi
